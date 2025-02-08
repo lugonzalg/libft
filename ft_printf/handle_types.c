@@ -12,8 +12,9 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
-#include "../include/ft_printf.h"
-#include "../include/libft.h"
+#include <stdint.h>
+#include "include/ft_printf.h"
+#include "include/libft.h"
 
 static void	to_hex_str(uintptr_t n, char *hex)
 {
@@ -25,7 +26,7 @@ static void	to_hex_str(uintptr_t n, char *hex)
 		to_hex_str(n / 16, hex);
 		to_hex_str(n % 16, hex);
 	}
-	else if (n >= 0 && n < 17)
+	else if (n < 17)
 	{
 		if (n > 9)
 			n += 39;
