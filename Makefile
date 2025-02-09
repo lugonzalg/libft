@@ -13,9 +13,10 @@
 NAME = libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 AR = ar rcs
 RM = rm -f
+INC = -I .
 
 FILES = mem/ft_memset \
 		mem/ft_bzero \
@@ -58,44 +59,38 @@ FILES = mem/ft_memset \
 		ft_printf/extra_printf \
 		ft_printf/handle_types \
 		ft_printf/writf \
-		tools/scl_range 
-
-FILES_B = list/ft_lstnew \
-		  list/ft_lstadd_front \
-		  list/ft_lstsize \
-		  list/ft_lstlast \
-		  list/ft_lstadd_back \
-		  list/ft_lstdelone \
-		  list/ft_lstclear \
-		  list/ft_lstiter \
-		  list/ft_lstmap \
+		tools/scl_range \
+		list/ft_lstnew \
+		list/ft_lstadd_front \
+		list/ft_lstsize \
+		list/ft_lstlast \
+		list/ft_lstadd_back \
+		list/ft_lstdelone \
+		list/ft_lstclear \
+		list/ft_lstiter \
+		list/ft_lstmap
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
 
 OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
 
 .c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
 $(NAME): $(OBJS)
 	$(AR) $@ $^
 
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $^
-
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_B)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: clean all
 
-.PHONY: bonus all clean fclean re
+.PHONY: all clean fclean re
