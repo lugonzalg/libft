@@ -13,3 +13,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 ### Fixed
+
+ - ft_lstnew bug when creating list node
