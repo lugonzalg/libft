@@ -10,6 +10,7 @@ typedef struct s_rb_node {
     t_rb_node   *left;
     t_rb_node   *right;
     t_rb_node   *parent;
+    void        *content;
 
     t_color     color;
     bool        is_left;
