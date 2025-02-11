@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - ft_tree_node_new [rbtree]
  - ft_tree_node_insert [rbtree]
  - ft_tree_node_delone [rbtree]
+ - ft_tree_node_delete [rbtree]
 
 ### Changed
 ### Fixed
