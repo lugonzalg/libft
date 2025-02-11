@@ -71,6 +71,7 @@ FILES = mem/ft_memset \
 		list/ft_lstmap \
 		tree/ft_tree_node_new \
 		tree/ft_tree_node_insert \
+		tree/ft_tree_node_delone \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
