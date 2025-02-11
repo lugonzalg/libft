@@ -2,7 +2,22 @@
 # define LIBFT_H
 
 #include <stddef.h>
+#include <stdbool.h>
 #include <stdarg.h>
+
+typedef enum e_compare {
+    LESS = -1,
+    EQUAL = 0,
+    GREATER = 1
+}   t_compare;
+
+typedef struct s_tree_node {
+    void                *content;
+
+    struct s_tree_node  *left;
+    struct s_tree_node  *right;
+}   t_tree_node;
+
 typedef struct s_list
 {
 	void			*content;
@@ -54,4 +69,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//RB TREE
+t_tree_node	*ft_tree_node_new(void *content);
+void		ft_tree_node_insert(t_tree_node **root, t_tree_node* new_node, t_compare (*compare)(void *a, void *b));
+t_tree_node *ft_tree_node_delete(t_tree_node *root, void *content, t_compare (*compare) (void *a, void *b), void (*del)(void *));
+void        ft_tree_node_delone(t_tree_node *node, void (*del)(void*));
+void		ft_tree_node_clear(t_tree_node *root, void (*del)(void *));
+
 #endif

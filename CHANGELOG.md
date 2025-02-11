@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
  - gitignore
- - ft_rbtnew [rbtree]
+ - t_tree_node [rbtree]
 
 ### Changed
 ### Fixed
