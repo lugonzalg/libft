@@ -24,6 +24,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef bool (*c_compare)(void *v1, int low, int high);
+
 void	*ft_memset(void *str, int c, size_t len);
 void	ft_bzero(void *str, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -76,5 +78,9 @@ void		ft_tree_node_insert(t_tree_node **root, t_tree_node* new_node, t_compare (
 t_tree_node *ft_tree_node_delete(t_tree_node *root, void *content, t_compare (*compare) (void *a, void *b), void (*del)(void *));
 void        ft_tree_node_delone(t_tree_node *node, void (*del)(void*));
 void		ft_tree_node_clear(t_tree_node *root, void (*del)(void *));
+
+// MERGE SORT
+void merge(void *array, int low, int mid, int high, size_t nbytes, c_compare compare);
+void merge_sort(void *vector, int low, int high, size_t nbytes, c_compare compare);
 
 #endif
