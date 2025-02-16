@@ -10,8 +10,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
  - gitignore
+ - t_tree_node [rbtree]
+ - ft_tree_node_new [rbtree]
+ - ft_tree_node_insert [rbtree]
+ - ft_tree_node_delone [rbtree]
+ - ft_tree_node_delete [rbtree]
 
 ### Changed
 ### Fixed
 
  - ft_lstnew bug when creating list node
+ - ft_lstdelone [rbtree]
