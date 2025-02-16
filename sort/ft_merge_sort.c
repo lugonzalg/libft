@@ -1,13 +1,8 @@
-#include <stddef.h>
-#include <stdbool.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <sys/stat.h>
 
-#include "libft.h"
-#include "merge_sort.h"
+#include "include/libft.h"
 
-void merge(
+void ft_merge(
     void        *array, 
     int         low, 
     int         mid, 
@@ -57,7 +52,7 @@ void merge(
 
 // https://www.geeksforgeeks.org/merge-sort-with-o1-extra-space-merge-and-on-lg-n-time/
 // https://www.geeksforgeeks.org/merge-sort/
-void merge_sort(
+void ft_merge_sort(
     void        *array, 
     int         low, 
     int         high, 
@@ -68,8 +63,8 @@ void merge_sort(
 
     if (low < high) {
         mid = (low + high) / 2;
-        merge_sort(array, low, mid, nbytes, compare);
-        merge_sort(array, mid + 1, high, nbytes, compare);
-        merge(array, low, mid, high, nbytes, compare);
+        ft_merge_sort(array, low, mid, nbytes, compare);
+        ft_merge_sort(array, mid + 1, high, nbytes, compare);
+        ft_merge(array, low, mid, high, nbytes, compare);
     }
 }

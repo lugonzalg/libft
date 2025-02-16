@@ -80,7 +80,7 @@ void        ft_tree_node_delone(t_tree_node *node, void (*del)(void*));
 void		ft_tree_node_clear(t_tree_node *root, void (*del)(void *));
 
 // MERGE SORT
-void merge(void *array, int low, int mid, int high, size_t nbytes, c_compare compare);
-void merge_sort(void *vector, int low, int high, size_t nbytes, c_compare compare);
+void ft_merge(void *array, int low, int mid, int high, size_t nbytes, c_compare compare);
+void ft_merge_sort(void *vector, int low, int high, size_t nbytes, c_compare compare);
 
 #endif
