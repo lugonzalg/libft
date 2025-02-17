@@ -38,11 +38,13 @@ void ft_merge(
     while (idx_low <= mid) {
         ft_memmove(tmp_vector + (idx * nbytes), array + (idx_low * nbytes), nbytes);
         idx_low++;
+        idx++;
     }
 
     while (idx_mid <= high) {
         ft_memmove(tmp_vector + (idx * nbytes), array + (idx_mid * nbytes), nbytes);
         idx_mid++;
+        idx++;
     }
     
     ft_memmove(array + low * nbytes, tmp_vector, (high - low + 1) * nbytes);
